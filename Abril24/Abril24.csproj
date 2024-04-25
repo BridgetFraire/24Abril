@@ -66,9 +66,11 @@
     <Compile Include="ITD.PERROSPERDIDOS.DOMAIN\INTERFACES\IAdministradorRepository.cs" />
     <Compile Include="ITD.PERROSPERDIDOS.INFRAESTRUCTURE\REPOSITORIES\AdministradorRepository.cs" />
     <Compile Include="ITD.PERROSPERDIDOS.APPLICATION\SERVICES\AdministradorService.cs" />
-    <Compile Include="ITD.PERROS.API\CONTROLLERS\AdministradorController.cs" />
+    <Compile Include="ITD.PERROSPERDIDOS.API\CONTROLLERS\AdministradorController.cs" />
     <Compile Include="ITD.PERROSPERDIDOS.DOMAIN\INTERFACES\MascotaPerdida.cs" />
     <Compile Include="ITD.PERROSPERDIDOS.INFRAESTRUCTURE\REPOSITORIES\IDbConnection.cs" />
+    <Compile Include="ITD.PERROSPERDIDOS.API\CONTROLLERS\ControllerBase.cs" />
+    <Compile Include="ITD.PERROSPERDIDOS.API\CONTROLLERS\IActionResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -103,8 +105,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
-    <Folder Include="ITD.PERROS.API\PRESENTERS\" />
-    <Folder Include="ITD.PERROS.API\CONTROLLERS\" />
+    <Folder Include="ITD.PERROSPERDIDOS.API\PRESENTERS\" />
+    <Folder Include="ITD.PERROSPERDIDOS.API\CONTROLLERS\" />
     <Folder Include="ITD.PERROSPERDIDOS.APPLICATION\PRESENTERS\" />
     <Folder Include="ITD.PERROSPERDIDOS.APPLICATION\INTERFACES\" />
     <Folder Include="ITD.PERROSPERDIDOS.INFRAESTRUCTURE\BD\" />
@@ -130,6 +132,9 @@
     </PackageReference>
     <PackageReference Include="MySql.Data">
       <Version>8.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Identity.Core">
+      <Version>8.0.4</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
