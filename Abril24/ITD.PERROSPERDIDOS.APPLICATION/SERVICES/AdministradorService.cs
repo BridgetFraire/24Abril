@@ -33,18 +33,18 @@ namespace Abril24.ITD.PERROSPERDIDOS.APPLICATION.SERVICES
             {
                 _mascotaPerdidaRepository = mascotaPerdidaRepository;
             }
-
-            public async Task<int> ModificarCaracteristicasPerroPerdido(int idMascota, string nuevasCaracteristicas)
+        // ------------------------------------PROCEDIMIENTO PATCH-----------------------------------------
+        public async Task<int> ModificarCaracteristicasPerroPerdido(int idMascota, string nuevasCaracteristicas)
             {
                 return await _mascotaPerdidaRepository.ModificarCaracteristicasPerroPerdido(idMascota, nuevasCaracteristicas);
             }
-
-            public async Task<int> ReportarPerroPerdido(int idUsuario, int celular, string raza, string color, string tamano, char sexo, string caracteristicas, DateTime fechaVisto, string lugarVisto, byte[] imagen)
+        // ------------------------------------PROCEDIMIENTO POST-----------------------------------------
+        public async Task<int> ReportarPerroPerdido(int idUsuario, int celular, string raza, string color, string tamano, char sexo, string caracteristicas, DateTime fechaVisto, string lugarVisto, byte[] imagen)
             {
                 return await _mascotaPerdidaRepository.ReportarPerroPerdido(idUsuario, celular, raza, color, tamano, sexo, caracteristicas, fechaVisto, lugarVisto, imagen);
             }
-
-            public async Task<IEnumerable<MascotaPerdida>> ObtenerPublicacionesRecientes()
+        // ------------------------------------PROCEDIMIENTO GET-----------------------------------------
+        public async Task<IEnumerable<MascotaPerdida>> ObtenerPublicacionesRecientes()
             {
                 return await _mascotaPerdidaRepository.ObtenerPublicacionesRecientes();
             }

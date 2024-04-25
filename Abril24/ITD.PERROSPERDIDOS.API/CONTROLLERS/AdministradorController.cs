@@ -17,6 +17,8 @@ namespace Abril24.ITD.PERROSPERDIDOS.API.CONTROLLERS
         {
             _administradorService = administradorService;
         }
+        
+// -----------------------------------------------------------------------------
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Administrador administrador)
@@ -30,7 +32,7 @@ namespace Abril24.ITD.PERROSPERDIDOS.API.CONTROLLERS
             {
                 return BadRequest(new { message = "Ocurrió un error al agregar el administrador." });
             }
-        }
+ // -----------------------------------------------------------------------------
 
         [HttpPatch("{id}")]
         public async Task<IActionResult> Patch(int id, [FromBody] Administrador administrador)
@@ -57,8 +59,9 @@ namespace Abril24.ITD.PERROSPERDIDOS.API.CONTROLLERS
         {
             _mascotaPerdidaService = mascotaPerdidaService;
         }
+   // ------------------------------------PROCEDIMIENTO POST-----------------------------------------
 
-        [HttpPost]
+            [HttpPost]
         public async Task<IActionResult> Post([FromBody] MascotaPerdida mascotaPerdida)
         {
             var result = await _mascotaPerdidaService.ReportarPerroPerdido(mascotaPerdida.IdUsuario, mascotaPerdida.Celular, mascotaPerdida.Raza, mascotaPerdida.Color, mascotaPerdida.Tamano, mascotaPerdida.Sexo, mascotaPerdida.Caracteristicas, mascotaPerdida.FechaVisto, mascotaPerdida.LugarVisto, mascotaPerdida.Imagen);
@@ -72,7 +75,8 @@ namespace Abril24.ITD.PERROSPERDIDOS.API.CONTROLLERS
             }
         }
 
-        [HttpPatch("{id}")]
+// ------------------------------------PROCEDIMIENTO PATCH-----------------------------------------
+            [HttpPatch("{id}")]
         public async Task<IActionResult> Patch(int id, [FromBody] MascotaPerdida mascotaPerdida)
         {
             var result = await _mascotaPerdidaService.ModificarCaracteristicasPerroPerdido(id, mascotaPerdida.Caracteristicas);
@@ -85,7 +89,8 @@ namespace Abril24.ITD.PERROSPERDIDOS.API.CONTROLLERS
                 return BadRequest(new { message = "Ocurrió un error al modificar las características del perro perdido." });
             }
         }
-        [HttpGet]
+// ------------------------------------PROCEDIMIENTO GET-----------------------------------------
+            [HttpGet]
         public async Task<IActionResult> Get()
         {
             var result = await _mascotaPerdidaService.ObtenerPublicacionesRecientes();
