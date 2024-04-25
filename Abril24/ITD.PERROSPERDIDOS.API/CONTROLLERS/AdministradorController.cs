@@ -11,8 +11,8 @@ using Abril24.ITD.PERROSPERDIDOS.DOMAIN.INTERFACES;
 
 namespace Abril24.ITD.PERROSPERDIDOS.API.CONTROLLERS
 {
-    //[Route("api/[controller]")]
-    //[ApiController]
+    [Route("api/[controller]")]
+    [ApiController]
     public class AdministradorController : ControllerBase
     {
         private readonly AdministradorService _administradorService;
@@ -21,8 +21,15 @@ namespace Abril24.ITD.PERROSPERDIDOS.API.CONTROLLERS
         {
             _administradorService = administradorService;
         }
+    public class MascotaPerdidaController : ControllerBase
+    {
+        private readonly MascotaPerdidaService _mascotaPerdidaService;
 
-     // ------------------------------------PROCEDIMIENTO POST-----------------------------------------
+        public MascotaPerdidaController(MascotaPerdidaService mascotaPerdidaService)
+        {
+             _mascotaPerdidaService = mascotaPerdidaService;
+        }
+            // ------------------------------------PROCEDIMIENTO POST-----------------------------------------
 
             [HttpPost]
             public async Task<IActionResult> Post([FromBody] MascotaPerdida mascotaPerdida)
